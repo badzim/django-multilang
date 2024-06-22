@@ -1,0 +1,85 @@
+# Environnements virtuels
+venv/
+env/
+.venv/
+.env/
+
+# Fichiers Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.env
+*.local
+
+# Fichiers de configuration d'éditeurs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Fichiers de logs
+*.log
+*.pot
+*.mo
+*.coverage
+.coverage.*
+*.cover
+.hypothesis/
+*.prof
+*.dat
+*.dirstamp
+*.egg
+*.egg-info/
+.installed.cfg
+*.pip
+*.pyd
+*.tox
+.tox/
+.cache/
+.coverage
+.nox/
+*.pyo
+.mypy_cache/
+.pytest_cache/
+.pytest_cache/*
+nosetests.xml
+coverage.xml
+*.seed
+*.pyc
+
+# Ignorer les fichiers de migration générés automatiquement lors des tests
+**/migrations/**/000*.py[cod]/
+
+# Répertoires statiques
+static/
+staticfiles/
+
+# Fichiers générés par Django
+db.sqlite3
+
+# Répertoires de médias
+media/
+
+# Répertoires de compilations
+build/
+dist/
+*.egg-info/
+
+# Fichiers de configuration secrets
+.secret_key
+.env
+
+# Fichiers Docker
+docker-compose.override.yml
+
+# Dossiers de Node.js
+node_modules/
+
+# Fichiers JetBrains
+.idea/
+
+# Fichiers de déploiement
+.deployment/
+.envrc
+
