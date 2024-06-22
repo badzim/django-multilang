@@ -29,6 +29,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["django-multilang.ikeoservices.tech", ]
 
+# Assurez-vous que votre domaine est dans cette liste
+CSRF_TRUSTED_ORIGINS = [
+    'https://django-multilang.ikeoservices.tech',
+]
 
 # Application definition
 
