@@ -11,8 +11,14 @@ COPY . /app
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
+# Install gettext for message compilation
+RUN apt-get update && apt-get install -y gettext
+
 # Collecter les fichiers statiques
 RUN python manage.py collectstatic --noinput
+
+# Compile the translations
+RUN python manage.py compilemessages
 
 # Exposer le port sur lequel l'application va tourner
 EXPOSE 8000
