@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-c-h26-082u^d7(#zr8d(js$@jp16os@!(=z3!my1__-bc6az3=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["django-multilang.ikeoservices.tech", ]
+ALLOWED_HOSTS = ["django-multilang.ikeoservices.tech", "localhost" ]
 
 # Assurez-vous que votre domaine est dans cette liste
 CSRF_TRUSTED_ORIGINS = [
@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main'
+    'documentation'
 ]
 
 MIDDLEWARE = [
@@ -63,7 +63,7 @@ ROOT_URLCONF = 'multilang_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,6 +71,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'documentation.context_processors.language_context',
             ],
         },
     },
@@ -116,9 +117,15 @@ LANGUAGE_CODE = 'fr'
 
 # restreindre le choix possible des langues à un sous-ensemble des langues disponibles
 LANGUAGES = [
-    ("fr", _("Français")),
+    ("fr", _("French")),
     ("en", _("English")),
 ]
+
+# Configurez les chemins de localisation
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
+
 
 TIME_ZONE = 'UTC'
 

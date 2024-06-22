@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% translate "Document List" %}{% endblock %}
+{% block content %}
+<h1 class="my-4">{% translate "Document List" %}</h1>
+<ul class="list-group">
+    {% for document in documents %}
+        <li class="list-group-item">
+            <a href="{% url 'document_detail' document.pk %}">{{ document.title }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
