@@ -23,7 +23,7 @@
     - Mise en place de l'environnement de production avec Docker
     - Deploiment sur digital ocean
 
-### [22 Juin 2024]
+### 22 Juin 2024
 
 - **Tâche**: Développement et intégration des fonctionnalités de base de l'application de documentation
   - **Temps passé**: 5 heures
@@ -48,14 +48,23 @@
       - Rédaction des instructions pour lancer l'application
       - Mise à jour du fichier `README.md` avec les instructions de lancement et les informations de base sur le projet
 
-### [Date]
+### 23 Juin 2024
 
-- **Tâche**: Développement des vues et des templates
-  - **Temps passé**: [Temps en heures/minutes]
-  - **Utilisation de ChatGPT**: Oui/Non
+- **Tâche**: Planification et création du chatbot LLM
+  - **Temps passé**: 2 heures
+  - **Utilisation de ChatGPT**: Oui
   - **Détails**:
-    - Création des vues pour la liste et le détail des documents
-    - Création des templates HTML
+    - Création d'un diagramme de séquence PlantUML pour le chatbot interrogeant un LLM
+    - Développement de la logique du chatbot
+    
+
+  ![Diagram](assets/processus_general.png)
+- **Tâche**: Intégration de la recherche augmentée par intelligence artificielle (RAG)
+  - **Temps passé**: 1 heure
+  - **Utilisation de ChatGPT**: Oui
+  - **Détails**:
+    - Création d'un diagramme de séquence PlantUML pour le RAG
+    - Développement du traitement pré-prompt pour interroger les LLM avec des informations basées sur le site web
 
 ### [Date]
 
@@ -141,7 +150,3 @@
 
     - Ouvrez votre navigateur et allez à `http://localhost:8000` pour voir l'application.
     - Allez à `http://localhost:8000/admin` pour accéder à l'interface d'administration.
-
----
-
-En suivant ce modèle, vous pourrez suivre efficacement votre progression, documenter l'utilisation de ChatGPT, et fournir des instructions claires pour lancer l'application. N'hésitez pas à adapter ce modèle à vos besoins spécifiques.

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-23 00:44+0200\n"
+"POT-Creation-Date: 2024-06-24 00:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,27 +34,62 @@ msgstr "Créé le"
 msgid "Updated At"
 msgstr "Mis à jour le"
 
-#: documentation/templates/base.html:13
-msgid "Documentation App"
-msgstr "Application de documentation"
+#: documentation/templates/chat.html:5
+#: documentation/templates/includes/footer.html:13
+#: documentation/templates/includes/navbar.html:10
+msgid "Chatbot"
+msgstr ""
 
-#: documentation/templates/base.html:23 multilang_site/settings.py:121
-msgid "English"
-msgstr "Anglais"
+#: documentation/templates/chat.html:12
+msgid "Ask a question ..."
+msgstr "Posez une question..."
 
-#: documentation/templates/base.html:25 multilang_site/settings.py:120
-msgid "French"
-msgstr "Français"
-
-#: documentation/templates/base.html:40
-msgid "Change language"
-msgstr "Changer la langue"
+#: documentation/templates/chat.html:13
+msgid "Send"
+msgstr "Envoyer"
 
 #: documentation/templates/document_detail.html:7
 msgid "Back to list"
 msgstr "Retour à la liste"
 
-#: documentation/templates/document_list.html:3
-#: documentation/templates/document_list.html:5
+#: documentation/templates/includes/footer.html:5
+#: documentation/templates/includes/navbar.html:3
+msgid "Documentation App"
+msgstr "Application de documentation"
+
+#: documentation/templates/includes/footer.html:6
+msgid "All rights reserved"
+msgstr "Tous droits réservés "
+
+#: documentation/templates/includes/footer.html:9
+msgid "Navigation"
+msgstr ""
+
+#: documentation/templates/includes/footer.html:11
+msgid "Home"
+msgstr "Accueil"
+
+#: documentation/templates/includes/footer.html:12
+#: documentation/templates/includes/navbar.html:7
+msgid "Documents"
+msgstr "Liste des Documents"
+
+#: documentation/templates/includes/footer.html:17
+msgid "Follow us"
+msgstr "Suivez Nous"
+
+#: documentation/templates/partials/document_list.html:3
+#: documentation/templates/partials/document_list.html:5
 msgid "Document List"
 msgstr "Liste des Documents"
+
+#: multilang_site/settings.py:120
+msgid "French"
+msgstr "Français"
+
+#: multilang_site/settings.py:121
+msgid "English"
+msgstr "Anglais"
+
+#~ msgid "Change language"
+#~ msgstr "Changer la langue"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-23 00:44+0200\n"
+"POT-Creation-Date: 2024-06-24 00:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,27 +34,59 @@ msgstr ""
 msgid "Updated At"
 msgstr ""
 
-#: documentation/templates/base.html:13
-msgid "Documentation App"
+#: documentation/templates/chat.html:5
+#: documentation/templates/includes/footer.html:13
+#: documentation/templates/includes/navbar.html:10
+msgid "Chatbot"
 msgstr ""
 
-#: documentation/templates/base.html:23 multilang_site/settings.py:121
-msgid "English"
+#: documentation/templates/chat.html:12
+msgid "Ask a question ..."
 msgstr ""
 
-#: documentation/templates/base.html:25 multilang_site/settings.py:120
-msgid "French"
-msgstr ""
-
-#: documentation/templates/base.html:40
-msgid "Change language"
+#: documentation/templates/chat.html:13
+msgid "Send"
 msgstr ""
 
 #: documentation/templates/document_detail.html:7
 msgid "Back to list"
 msgstr ""
 
-#: documentation/templates/document_list.html:3
-#: documentation/templates/document_list.html:5
+#: documentation/templates/includes/footer.html:5
+#: documentation/templates/includes/navbar.html:3
+msgid "Documentation App"
+msgstr ""
+
+#: documentation/templates/includes/footer.html:6
+msgid "All rights reserved"
+msgstr ""
+
+#: documentation/templates/includes/footer.html:9
+msgid "Navigation"
+msgstr ""
+
+#: documentation/templates/includes/footer.html:11
+msgid "Home"
+msgstr ""
+
+#: documentation/templates/includes/footer.html:12
+#: documentation/templates/includes/navbar.html:7
+msgid "Documents"
+msgstr ""
+
+#: documentation/templates/includes/footer.html:17
+msgid "Follow us"
+msgstr ""
+
+#: documentation/templates/partials/document_list.html:3
+#: documentation/templates/partials/document_list.html:5
 msgid "Document List"
+msgstr ""
+
+#: multilang_site/settings.py:120
+msgid "French"
+msgstr ""
+
+#: multilang_site/settings.py:121
+msgid "English"
 msgstr ""
