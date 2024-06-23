@@ -5,7 +5,9 @@ from .models import Document
 import json
 
 from django.conf import settings
-import openai
+from openai import OpenAI
+
+client = OpenAI(api_key=settings.OPENAI_API_KEY)
 # Create your views here.
 
 def document_list(request):
@@ -16,7 +18,6 @@ def document_detail(request, pk):
     document = get_object_or_404(Document, pk=pk)
     return render(request, 'document_detail.html', {'document': document})
 
-openai.api_key = settings.OPENAI_API_KEY
 
 @csrf_exempt
 def chatbot(request):
@@ -28,19 +29,17 @@ def chatbot(request):
         personalized_prompt = f"Je suis un développeur débutant qui utilise votre documentation. Pouvez-vous m'aider avec la question suivante : {question}"
 
         # Appel à l'API OpenAI GPT-3.5 Turbo
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "system", "content": "Tu es un assistant utile pour les développeurs débutants."},
-                {"role": "user", "content": personalized_prompt}
-            ],
-            max_tokens=150,
-            n=1,
-            stop=None,
-            temperature=0.7,
-        )
+        response = client.chat.completions.create(model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "Tu es un assistant utile pour les développeurs débutants."},
+            {"role": "user", "content": personalized_prompt}
+        ],
+        max_tokens=150,
+        n=1,
+        stop=None,
+        temperature=0.7)
 
-        answer = response['choices'][0]['message']['content'].strip()
+        answer = response.choices[0].message.content.strip()
 
         return JsonResponse({'answer': answer})
 
