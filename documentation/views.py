@@ -39,7 +39,7 @@ def chatbot(request):
         data = json.loads(request.body)
         question = data.get('question')
         
-        user_language = request.LANGUAGE_CODE  # Get the user's preferred language
+        user_language = request.LANGUAGE_CODE 
         activate(user_language)  # Activate the user's preferred language
 
         # Vérifier l'intervalle de temps entre les questions
@@ -124,8 +124,6 @@ def get_relevant_context(question):
     
     # Trier les documents par similarité décroissante
     relevant_docs_filtered.sort(key=lambda x: x[1], reverse=True)
-    
-    print(relevant_docs_filtered)
     
     if relevant_docs_filtered:
         return "\n\n".join(doc.page_content for doc, _ in relevant_docs_filtered)

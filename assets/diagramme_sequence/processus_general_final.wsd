@@ -1,0 +1,20 @@
+@startuml
+
+actor User
+participant "Django Server" as Server
+participant "Chatbot Function" as Chatbot
+participant "Database" as DB
+participant "LLM (GPT-4)" as LLM
+
+User -> Server: Envoie une requête de message
+Server -> Chatbot: Passe le message à la fonction chatbot
+Chatbot -> DB: Recherche du contexte pertinent
+DB -> Chatbot: Retourne le contexte pertinent
+Chatbot -> Chatbot: Pré-traitement et ajout du pré-prompt avec le contexte
+Chatbot -> LLM: Envoie le prompt traité
+LLM -> Chatbot: Réponse générée par le modèle
+Chatbot -> Chatbot: Post-traitement de la réponse
+Chatbot -> Server: Passe la réponse au serveur
+Server -> User: Transmet la réponse au client
+
+@enduml
