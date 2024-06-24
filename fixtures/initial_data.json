@@ -1,0 +1,102 @@
+[
+    {
+        "model": "documentation.document",
+        "pk": 1,
+        "fields": {
+            "title": "Guide de démarrage rapide",
+            "content": "Ce guide vous aidera à démarrer rapidement avec notre API.",
+            "created_at": "2024-06-24T00:00:00Z",
+            "updated_at": "2024-06-24T00:00:00Z"
+        }
+    },
+    {
+        "model": "documentation.document",
+        "pk": 2,
+        "fields": {
+            "title": "Documentation API",
+            "content": "Notre API permet d'accéder aux données de notre service de manière programmatique.",
+            "created_at": "2024-06-24T00:00:00Z",
+            "updated_at": "2024-06-24T00:00:00Z"
+        }
+    },
+    {
+        "model": "documentation.document",
+        "pk": 3,
+        "fields": {
+            "title": "FAQ",
+            "content": "Voici les réponses aux questions fréquemment posées par les utilisateurs.",
+            "created_at": "2024-06-24T00:00:00Z",
+            "updated_at": "2024-06-24T00:00:00Z"
+        }
+    },
+    {
+        "model": "documentation.document",
+        "pk": 4,
+        "fields": {
+            "title": "Guide d'installation",
+            "content": "Instructions détaillées pour installer notre logiciel.",
+            "created_at": "2024-06-24T00:00:00Z",
+            "updated_at": "2024-06-24T00:00:00Z"
+        }
+    },
+    {
+        "model": "documentation.document",
+        "pk": 5,
+        "fields": {
+            "title": "Tutoriel avancé",
+            "content": "Ce tutoriel couvre des fonctionnalités avancées de notre API.",
+            "created_at": "2024-06-24T00:00:00Z",
+            "updated_at": "2024-06-24T00:00:00Z"
+        }
+    },
+    {
+        "model": "documentation.document",
+        "pk": 6,
+        "fields": {
+            "title": "Guide de dépannage",
+            "content": "Solutions aux problèmes courants rencontrés par les utilisateurs.",
+            "created_at": "2024-06-24T00:00:00Z",
+            "updated_at": "2024-06-24T00:00:00Z"
+        }
+    },
+    {
+        "model": "documentation.document",
+        "pk": 7,
+        "fields": {
+            "title": "Notes de version",
+            "content": "Liste des modifications et des nouvelles fonctionnalités dans chaque version.",
+            "created_at": "2024-06-24T00:00:00Z",
+            "updated_at": "2024-06-24T00:00:00Z"
+        }
+    },
+    {
+        "model": "documentation.document",
+        "pk": 8,
+        "fields": {
+            "title": "Manuel de l'utilisateur",
+            "content": "Guide complet de toutes les fonctionnalités disponibles dans notre service.",
+            "created_at": "2024-06-24T00:00:00Z",
+            "updated_at": "2024-06-24T00:00:00Z"
+        }
+    },
+    {
+        "model": "documentation.document",
+        "pk": 9,
+        "fields": {
+            "title": "Exemples de code",
+            "content": "Des exemples de code pour illustrer comment utiliser notre API.",
+            "created_at": "2024-06-24T00:00:00Z",
+            "updated_at": "2024-06-24T00:00:00Z"
+        }
+    },
+    {
+        "model": "documentation.document",
+        "pk": 10,
+        "fields": {
+            "title": "Politique de sécurité",
+            "content": "Informations sur les mesures de sécurité mises en place pour protéger les données des utilisateurs.",
+            "created_at": "2024-06-24T00:00:00Z",
+            "updated_at": "2024-06-24T00:00:00Z"
+        }
+    }
+]
