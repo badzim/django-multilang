@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from .models import Document
 import json
 
+from django.utils.translation import gettext as _, activate
 from django.conf import settings
 from openai import OpenAI
 
@@ -24,26 +25,49 @@ def chatbot(request):
     if request.method == 'POST':
         data = json.loads(request.body)
         question = data.get('question')
+        
+        user_language = request.LANGUAGE_CODE  # Get the user's preferred language
 
-        # Pré-traitement de la question de l'utilisateur
-        personalized_prompt = f"Je suis un développeur débutant qui utilise votre documentation. Pouvez-vous m'aider avec la question suivante : {question}"
+        # Activate the user's preferred language
+        activate(user_language)
 
-        # Appel à l'API OpenAI GPT-3.5 Turbo
-        response = client.chat.completions.create(model="gpt-3.5-turbo",
-        messages=[
-            {"role": "system", "content": "Tu es un assistant utile pour les développeurs débutants."},
-            {"role": "user", "content": personalized_prompt}
-        ],
-        max_tokens=150,
-        n=1,
-        stop=None,
-        temperature=0.7)
+        # Query relevant context from your documentation
+        context = get_relevant_context(question)
 
-        answer = response.choices[0].message.content.strip()
+        # Preprocess the user's question with relevant context
+        personalized_prompt = _("As a beginner developer using our documentation, you asked: {question}.").format(question=question)
+        
 
+        # Call OpenAI API with the personalized prompt
+        if not context:
+            answer = _("I'm sorry, I couldn't find the information you are looking for in our documentation.")
+        else:
+            response = client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": _("You are a helpful assistant for beginner developers.")},
+                    {"role": "user", "content": personalized_prompt},
+                    {"role": "assistant", "content": _("Here is the relevant information: {context}.").format(context=context)},
+                ],
+                max_tokens=150,
+                n=1,
+                stop=None,
+                temperature=0.7,
+            )
+
+            answer = response.choices[0].message.content.strip()
         return JsonResponse({'answer': answer})
-
+    
     return JsonResponse({'error': 'Invalid request method'}, status=400)
+
+def get_relevant_context(question):
+    # Example logic to find the most relevant document based on the question
+    # This could be more sophisticated using search algorithms or libraries
+    try:
+        relevant_document = Document.objects.filter(content__icontains=question).first()
+        return relevant_document.content if relevant_document else None
+    except Document.DoesNotExist:
+        return None
 
 def chat_interface(request):
     return render(request, 'chat.html')

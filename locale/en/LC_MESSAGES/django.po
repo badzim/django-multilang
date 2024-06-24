@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-24 00:11+0200\n"
+"POT-Creation-Date: 2024-06-24 02:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,7 +35,7 @@ msgid "Updated At"
 msgstr ""
 
 #: documentation/templates/chat.html:5
-#: documentation/templates/includes/footer.html:13
+#: documentation/templates/includes/footer.html:14
 #: documentation/templates/includes/navbar.html:10
 msgid "Chatbot"
 msgstr ""
@@ -52,29 +52,29 @@ msgstr ""
 msgid "Back to list"
 msgstr ""
 
-#: documentation/templates/includes/footer.html:5
+#: documentation/templates/includes/footer.html:6
 #: documentation/templates/includes/navbar.html:3
 msgid "Documentation App"
 msgstr ""
 
-#: documentation/templates/includes/footer.html:6
+#: documentation/templates/includes/footer.html:7
 msgid "All rights reserved"
 msgstr ""
 
-#: documentation/templates/includes/footer.html:9
+#: documentation/templates/includes/footer.html:10
 msgid "Navigation"
 msgstr ""
 
-#: documentation/templates/includes/footer.html:11
+#: documentation/templates/includes/footer.html:12
 msgid "Home"
 msgstr ""
 
-#: documentation/templates/includes/footer.html:12
+#: documentation/templates/includes/footer.html:13
 #: documentation/templates/includes/navbar.html:7
 msgid "Documents"
 msgstr ""
 
-#: documentation/templates/includes/footer.html:17
+#: documentation/templates/includes/footer.html:18
 msgid "Follow us"
 msgstr ""
 
@@ -83,10 +83,30 @@ msgstr ""
 msgid "Document List"
 msgstr ""
 
-#: multilang_site/settings.py:120
+#: documentation/views.py:38
+#, python-brace-format
+msgid "As a beginner developer using our documentation, you asked: {question}."
+msgstr ""
+
+#: documentation/views.py:43
+msgid ""
+"I'm sorry, I couldn't find the information you are looking for in our "
+"documentation."
+msgstr ""
+
+#: documentation/views.py:48
+msgid "You are a helpful assistant for beginner developers."
+msgstr ""
+
+#: documentation/views.py:50
+#, python-brace-format
+msgid "Here is the relevant information: {context}."
+msgstr ""
+
+#: multilang_site/settings.py:123
 msgid "French"
 msgstr ""
 
-#: multilang_site/settings.py:121
+#: multilang_site/settings.py:124
 msgid "English"
 msgstr ""
