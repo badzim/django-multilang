@@ -11,3 +11,4 @@ chromadb
 langchain 
 bs4
 pysqlite3-binary
+markdown

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-24 02:16+0200\n"
+"POT-Creation-Date: 2024-06-24 12:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,17 +40,19 @@ msgstr "Mis à jour le"
 msgid "Chatbot"
 msgstr ""
 
-#: documentation/templates/chat.html:12
-msgid "Ask a question ..."
-msgstr "Posez une question..."
+#: documentation/templates/chat.html:9
+msgid "Type your message here..."
+msgstr "Tapez votre message ici..."
 
-#: documentation/templates/chat.html:13
+
+#: documentation/templates/chat.html:10
 msgid "Send"
 msgstr "Envoyer"
 
-#: documentation/templates/document_detail.html:7
-msgid "Back to list"
-msgstr "Retour à la liste"
+#: documentation/templates/document_list.html:3
+#: documentation/templates/document_list.html:5
+msgid "Document List"
+msgstr "Liste des Documents"
 
 #: documentation/templates/includes/footer.html:6
 #: documentation/templates/includes/navbar.html:3
@@ -78,33 +80,46 @@ msgstr "Liste des Documents"
 msgid "Follow us"
 msgstr "Suivez Nous"
 
-#: documentation/templates/partials/document_list.html:3
-#: documentation/templates/partials/document_list.html:5
-msgid "Document List"
-msgstr "Liste des Documents"
+#: documentation/templates/partials/document_detail.html:7
+msgid "Back to list"
+msgstr "Retour à la liste"
 
-#: documentation/views.py:38
+#: documentation/views.py:51
+msgid "Please wait a few seconds before asking another question."
+msgstr "Veuillez attendre quelques secondes avant de poser une autre question."
+
+
+#: documentation/views.py:55
+msgid "Please wait until the current response is finished."
+msgstr "Veuillez attendre que la réponse actuelle soit terminée."
+
+#: documentation/views.py:68
+msgid ""
+"I'm sorry, I couldn't find the information you are looking for in our "
+"documentation."
+msgstr ""
+"Je suis désolé, je n'ai pas trouvé les informations que vous recherchez dans "
+"notre documentation."
+
+#: documentation/views.py:72
 #, python-brace-format
 msgid "As a beginner developer using our documentation, you asked: {question}."
 msgstr ""
 "En tant que développeur débutant utilisant notre documentation, vous avez "
 "demandé : {question}."
 
-#: documentation/views.py:43
+#: documentation/views.py:77
+#, python-brace-format
 msgid ""
-"I'm sorry, I couldn't find the information you are looking for in our "
-"documentation."
-msgstr "Je suis désolé, je n'ai pas trouvé les informations que vous recherchez dans notre documentation."
+"You are a helpful assistant for users, specifically helping them with our "
+"documentation. You must answer in {user_language}."
+msgstr "Vous êtes un assistant utile pour les utilisateurs, les aidant spécifiquement avec notre "
+"documentation. Vous devez répondre en {user_language}."
 
-#: documentation/views.py:48
-msgid "You are a helpful assistant for beginner developers."
-msgstr "Vous êtes un assistant utile pour les développeurs débutants."
-
-#: documentation/views.py:50
-#, fuzzy, python-brace-format
-#| msgid "Here is the relevant information: "
-msgid "Here is the relevant information: {context}."
-msgstr "Voici les informations pertinentes :"
+#: documentation/views.py:79
+#, python-brace-format
+msgid "Base your response strictly on the following context: {context}"
+msgstr "Basez votre réponse strictement sur le contexte suivant : {context}"
 
 #: multilang_site/settings.py:123
 msgid "French"
@@ -113,6 +128,17 @@ msgstr "Français"
 #: multilang_site/settings.py:124
 msgid "English"
 msgstr "Anglais"
+
+#~ msgid "Ask a question ..."
+#~ msgstr "Posez une question..."
+
+#~ msgid "You are a helpful assistant for beginner developers."
+#~ msgstr "Vous êtes un assistant utile pour les développeurs débutants."
+
+#, fuzzy
+#~| msgid "Here is the relevant information: "
+#~ msgid "Here is the relevant information: {context}."
+#~ msgstr "Voici les informations pertinentes :"
 
 #~ msgid "I'm sorry, the request took too long to process. Please try again."
 #~ msgstr ""

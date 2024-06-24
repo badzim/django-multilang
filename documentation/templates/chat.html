@@ -4,58 +4,86 @@
 {% block content %}
 <h1>{% translate "Chatbot" %}</h1>
 <div id="chat-container" class="card">
-    <div id="chat-log" class="card-body">
-        <!-- Messages will be appended here -->
-    </div>
-    <div class="card-footer">
-        <form id="chat-form" class="d-flex">
-            <input type="text" id="chat-input" class="form-control mr-2" placeholder="{% translate 'Ask a question ...' %}" required>
-            <button type="submit" class="btn btn-primary">{% translate 'Send' %}</button>
-        </form>
-    </div>
+    <div id="chat-log" class="card-body"></div>
+    <form id="chat-form" class="card-footer">
+        <input type="text" id="chat-input" class="form-control" placeholder="{% translate 'Type your message here...' %}" required>
+        <button type="submit" id="send-button" class="btn btn-primary">{% translate 'Send' %}</button>
+    </form>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.2.0/markdown-it.min.js"></script>
 <script>
-document.getElementById('chat-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const input = document.getElementById('chat-input');
-    const message = input.value;
-    input.value = '';
+    document.getElementById('chat-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const input = document.getElementById('chat-input');
+        const message = input.value;
+        input.value = '';
 
-    const chatLog = document.getElementById('chat-log');
-    chatLog.innerHTML += `<div class="user-message alert alert-primary">${message}</div>`;
+        const sendButton = document.getElementById('send-button');
+        sendButton.disabled = true;  // Désactiver le bouton "Send"
 
-    // Simuler la latence de la réponse serveur
-    chatLog.innerHTML += `<div class="bot-message alert alert-secondary">...</div>`;
+        const chatLog = document.getElementById('chat-log');
+        chatLog.innerHTML += `<div class="user-message alert alert-primary">${message}</div>`;
 
-    const response = await fetch('{% url "chatbot" %}', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRFToken': '{{ csrf_token }}'
-        },
-        body: JSON.stringify({ question: message })
+        // Simuler la latence de la réponse serveur
+        chatLog.innerHTML += `<div class="bot-message alert alert-secondary">...</div>`;
+
+        const response = await fetch('{% url "chatbot" %}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}'
+            },
+            body: JSON.stringify({ question: message })
+        });
+
+        const data = await response.json();
+        // Supprimer le "..." et ajouter la réponse réelle
+        chatLog.removeChild(chatLog.lastChild);
+        const md = window.markdownit();
+        chatLog.innerHTML += `<div class="bot-message alert alert-secondary">${md.render(data.answer)}</div>`;
+        chatLog.scrollTop = chatLog.scrollHeight;
+
+        sendButton.disabled = false;  // Réactiver le bouton "Send"
     });
-
-    const data = await response.json();
-    // Supprimer le "..." et ajouter la réponse réelle
-    chatLog.removeChild(chatLog.lastChild);
-    chatLog.innerHTML += `<div class="bot-message alert alert-secondary">${data.answer}</div>`;
-});
 </script>
 <style>
 #chat-container {
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
     margin-top: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 #chat-log {
-    height: 90%;
-    overflow-y: scroll;
+    height: 70vh;
+    overflow-y: auto;
     padding: 10px;
     border-bottom: 1px solid #dee2e6;
+    background-color: #fff;
+    border-radius: 10px 10px 0 0;
 }
 .user-message, .bot-message {
     margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
 }
+.user-message {
+    background-color: #dcf8c6;
+    text-align: right;
+}
+.bot-message {
+    background-color: #eee;
+    text-align: left;
+}
+#chat-form {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    gap: 10px;  /* Ajout de l'espace entre le champ de saisie et le bouton */
+}
+
 </style>
 {% endblock %}
