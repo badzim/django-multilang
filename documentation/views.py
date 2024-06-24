@@ -50,13 +50,6 @@ def chatbot(request):
         if time_diff < 5:
             return JsonResponse({'answer': _("Please wait a few seconds before asking another question.")})
 
-        # Vérifier si le chatbot est en train de répondre à une question
-        if request.session.get('is_processing', True):
-            return JsonResponse({'answer': _("Please wait until the current response is finished.")})
-        
-        # Marquer le chatbot comme en cours de traitement
-        request.session['is_processing'] = True
-
         try:
             # Mettre à jour l'heure de la dernière question
             request.session['last_question_time'] = current_time
@@ -88,9 +81,6 @@ def chatbot(request):
             return JsonResponse({'answer': answer})
         except Exception as e:
             return JsonResponse({'error': str(e)}, status=500)
-        finally:
-            # Marquer le chatbot comme ayant terminé le traitement
-            request.session['is_processing'] = False
     
     return JsonResponse({'error': 'Invalid request method'}, status=400)
 
