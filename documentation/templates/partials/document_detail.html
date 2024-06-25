@@ -3,6 +3,6 @@
 {% block title %}{{ document.title }}{% endblock %}
 {% block content %}
 <h1 class="my-4">{{ document.title }}</h1>
-<p>{{ document.content }}</p>
+<p>{{ document.content | safe }}</p>
 <p><a href="{% url 'document_list' %}" class="btn btn-primary">{% translate "Back to list" %}</a></p>
 {% endblock %}
