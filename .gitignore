@@ -49,7 +49,6 @@ coverage.xml
 *.pyc
 
 # Répertoires statiques
-static/
 staticfiles/
 
 # Fichiers générés par Django
