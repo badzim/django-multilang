@@ -1,5 +1,3 @@
-# documentation/urls.py
-
 from django.urls import path
 from .views import document_list, document_detail, chatbot, chat_interface
 

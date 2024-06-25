@@ -30,4 +30,5 @@ jobs:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
         python manage.py migrate
+        flake8
         python manage.py test

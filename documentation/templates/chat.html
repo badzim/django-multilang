@@ -2,15 +2,17 @@
 {% load i18n %}
 {% block title %}Chatbot{% endblock %}
 {% block content %}
-<h1>{% translate "Chatbot" %}</h1>
+<h1>{% translate "templates.base.chatbot_title" %}</h1>
 <div id="chat-container" class="card">
     <div id="chat-log" class="card-body"></div>
     <form id="chat-form" class="card-footer">
-        <input type="text" id="chat-input" class="form-control" placeholder="{% translate 'Type your message here...' %}" required>
-        <button type="submit" id="send-button" class="btn btn-primary">{% translate 'Send' %}</button>
+        <input type="text" id="chat-input" class="form-control" 
+               placeholder="{% translate 'templates.base.chatbot_input_placeholder' %}" required>
+        <button type="submit" id="send-button" class="btn btn-primary">
+            {% translate 'templates.base.chatbot_send_button' %}
+        </button>
     </form>
 </div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.2.0/markdown-it.min.js"></script>
 <script>
     document.getElementById('chat-form').addEventListener('submit', async function(e) {
