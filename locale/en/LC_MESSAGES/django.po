@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-25 19:26+0200\n"
+"POT-Creation-Date: 2024-06-26 01:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,10 +39,12 @@ msgid "templates.base.chatbot_title"
 msgstr "Chatbot"
 
 #: documentation/templates/chat.html:10
+#: documentation/templates/partials/mini_chatbot.html:9
 msgid "templates.base.chatbot_input_placeholder"
 msgstr "Type your message here..."
 
 #: documentation/templates/chat.html:12
+#: documentation/templates/partials/mini_chatbot.html:11
 msgid "templates.base.chatbot_send_button"
 msgstr "Send"
 
@@ -85,6 +87,14 @@ msgstr "Follow Us"
 #: documentation/templates/partials/document_detail.html:8
 msgid "templates.partials.document.detail.back"
 msgstr "Back"
+
+#: documentation/templates/partials/mini_chatbot.html:19
+msgid "Chatbot"
+msgstr ""
+
+#: documentation/templates/partials/mini_chatbot.html:20
+msgid "Clear"
+msgstr ""
 
 #: documentation/views.py:46
 msgid "views.chatbot.wait_before_retry"

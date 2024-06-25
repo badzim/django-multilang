@@ -11,42 +11,96 @@
         <button type="submit" id="send-button" class="btn btn-primary">
             {% translate 'templates.base.chatbot_send_button' %}
         </button>
+        <button type="button" id="clear-button" class="btn btn-danger">
+            {% translate 'Clear' %}
+        </button>
     </form>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.2.0/markdown-it.min.js"></script>
 <script>
-    document.getElementById('chat-form').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const input = document.getElementById('chat-input');
-        const message = input.value;
-        input.value = '';
-
-        const sendButton = document.getElementById('send-button');
-        sendButton.disabled = true;  // Désactiver le bouton "Send"
-
+    document.addEventListener('DOMContentLoaded', function () {
+        const chatForm = document.getElementById('chat-form');
+        const chatInput = document.getElementById('chat-input');
         const chatLog = document.getElementById('chat-log');
-        chatLog.innerHTML += `<div class="user-message alert alert-primary">${message}</div>`;
+        const sendButton = document.getElementById('send-button');
+        const clearButton = document.getElementById('clear-button');
 
-        // Simuler la latence de la réponse serveur
-        chatLog.innerHTML += `<div class="bot-message alert alert-secondary">...</div>`;
+        // Fonction pour sauvegarder les messages dans le localStorage
+        function saveMessages() {
+            const messages = chatLog.innerHTML;
+            localStorage.setItem('chatbotMessages', messages);
+        }
 
-        const response = await fetch('{% url "chatbot" %}', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': '{{ csrf_token }}'
-            },
-            body: JSON.stringify({ question: message })
+        // Fonction pour restaurer les messages du localStorage
+        function loadMessages() {
+            const messages = localStorage.getItem('chatbotMessages');
+            if (messages) {
+                chatLog.innerHTML = messages;
+                chatLog.scrollTop = chatLog.scrollHeight;
+            }
+        }
+
+        // Fonction pour effacer les messages
+        function clearMessages() {
+            chatLog.innerHTML = '';
+            localStorage.removeItem('chatbotMessages');
+        }
+
+        // Restaurer les messages au chargement de la page
+        loadMessages();
+
+        chatForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const message = chatInput.value.trim();
+            if (message) {
+                chatInput.value = '';
+
+                // Désactiver le bouton de soumission
+                sendButton.disabled = true;
+
+                // Afficher le message de l'utilisateur
+                const userMessage = document.createElement('div');
+                userMessage.textContent = message;
+                userMessage.className = 'user-message alert alert-primary';
+                chatLog.appendChild(userMessage);
+                saveMessages(); // Sauvegarder les messages
+
+                // Afficher le message de chargement du chatbot
+                const botLoadingMessage = document.createElement('div');
+                botLoadingMessage.textContent = '...';
+                botLoadingMessage.className = 'bot-message alert alert-secondary';
+                chatLog.appendChild(botLoadingMessage);
+                saveMessages(); // Sauvegarder les messages
+
+                // Envoyer la requête au serveur
+                const response = await fetch('{% url "chatbot" %}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{ csrf_token }}'
+                    },
+                    body: JSON.stringify({ question: message })
+                });
+
+                const data = await response.json();
+                // Supprimer le "..." et ajouter la réponse réelle
+                chatLog.removeChild(botLoadingMessage);
+                const md = window.markdownit();
+                const botMessage = document.createElement('div');
+                botMessage.innerHTML = md.render(data.answer);
+                botMessage.className = 'bot-message alert alert-secondary';
+                chatLog.appendChild(botMessage);
+                chatLog.scrollTop = chatLog.scrollHeight;
+                saveMessages(); // Sauvegarder les messages
+
+                // Réactiver le bouton de soumission
+                sendButton.disabled = false;
+            }
         });
 
-        const data = await response.json();
-        // Supprimer le "..." et ajouter la réponse réelle
-        chatLog.removeChild(chatLog.lastChild);
-        const md = window.markdownit();
-        chatLog.innerHTML += `<div class="bot-message alert alert-secondary">${md.render(data.answer)}</div>`;
-        chatLog.scrollTop = chatLog.scrollHeight;
-
-        sendButton.disabled = false;  // Réactiver le bouton "Send"
+        clearButton.addEventListener('click', function () {
+            clearMessages();
+        });
     });
 </script>
 <style>
@@ -87,5 +141,8 @@
     gap: 10px;  /* Ajout de l'espace entre le champ de saisie et le bouton */
 }
 
+#clear-button {
+    margin-left: auto;  /* Align the button to the right */
+}
 </style>
 {% endblock %}
