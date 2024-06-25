@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load markdown_extras %}
 {% block title %}{{ document.title }}{% endblock %}
 {% block content %}
 <h1 class="my-4">{{ document.title }}</h1>
-<p>{{ document.content | safe }}</p>
-<p><a href="{% url 'document_list' %}" class="btn btn-primary">{% translate "Back to list" %}</a></p>
+    {{ document.content | markdown }}
+<p><a href="{% url 'document_list' %}" class="btn btn-primary">{% translate "templates.partials.document.detail.back" %}</a></p>
 {% endblock %}

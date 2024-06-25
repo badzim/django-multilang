@@ -48,9 +48,6 @@ coverage.xml
 *.seed
 *.pyc
 
-# Ignorer les fichiers de migration générés automatiquement lors des tests
-**/migrations/**/000*.py[cod]/
-
 # Répertoires statiques
 static/
 staticfiles/

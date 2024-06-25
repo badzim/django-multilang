@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-24 12:22+0200\n"
+"POT-Creation-Date: 2024-06-25 19:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: documentation/models.py:11
+#: documentation/models.py:10
 msgid "Title"
 msgstr "Titre"
 
-#: documentation/models.py:12
+#: documentation/models.py:11
 msgid "Content"
 msgstr "Contenu"
 
@@ -30,96 +30,95 @@ msgstr "Contenu"
 msgid "Created At"
 msgstr "Créé le"
 
-#: documentation/models.py:14
+#: documentation/models.py:15
 msgid "Updated At"
 msgstr "Mis à jour le"
 
 #: documentation/templates/chat.html:5
-#: documentation/templates/includes/footer.html:14
-#: documentation/templates/includes/navbar.html:10
-msgid "Chatbot"
-msgstr ""
-
-#: documentation/templates/chat.html:9
-msgid "Type your message here..."
-msgstr "Tapez votre message ici..."
-
+msgid "templates.base.chatbot_title"
+msgstr "Chatbot"
 
 #: documentation/templates/chat.html:10
-msgid "Send"
+msgid "templates.base.chatbot_input_placeholder"
+msgstr "Saisissez votre question ici..."
+
+#: documentation/templates/chat.html:12
+msgid "templates.base.chatbot_send_button"
 msgstr "Envoyer"
 
 #: documentation/templates/document_list.html:3
 #: documentation/templates/document_list.html:5
-msgid "Document List"
+msgid "template.document_list_title"
 msgstr "Liste des Documents"
 
 #: documentation/templates/includes/footer.html:6
 #: documentation/templates/includes/navbar.html:3
-msgid "Documentation App"
-msgstr "Application de documentation"
+msgid "templates.includes.documentation_app"
+msgstr "Application de Documentation"
 
 #: documentation/templates/includes/footer.html:7
-msgid "All rights reserved"
-msgstr "Tous droits réservés "
+msgid "templates.includes.footer.all_rights_reserved"
+msgstr "Tous droits réservés"
 
 #: documentation/templates/includes/footer.html:10
-msgid "Navigation"
-msgstr ""
+msgid "templates.includes.footer.navigation"
+msgstr "Navigation"
 
 #: documentation/templates/includes/footer.html:12
-msgid "Home"
+msgid "templates.includes.footer.home"
 msgstr "Accueil"
 
 #: documentation/templates/includes/footer.html:13
 #: documentation/templates/includes/navbar.html:7
-msgid "Documents"
-msgstr "Liste des Documents"
+msgid "templates.includes.documents"
+msgstr "Documents"
+
+#: documentation/templates/includes/footer.html:14
+#: documentation/templates/includes/navbar.html:10
+msgid "templates.includes.chatbot"
+msgstr "Chatbot"
 
 #: documentation/templates/includes/footer.html:18
-msgid "Follow us"
-msgstr "Suivez Nous"
+msgid "templates.includes.footer.follow_us"
+msgstr "Suivez-nous"
 
-#: documentation/templates/partials/document_detail.html:7
-msgid "Back to list"
-msgstr "Retour à la liste"
+#: documentation/templates/partials/document_detail.html:8
+msgid "templates.partials.document.detail.back"
+msgstr "Retour"
 
-#: documentation/views.py:51
-msgid "Please wait a few seconds before asking another question."
-msgstr "Veuillez attendre quelques secondes avant de poser une autre question."
-
-
-#: documentation/views.py:55
-msgid "Please wait until the current response is finished."
-msgstr "Veuillez attendre que la réponse actuelle soit terminée."
-
-#: documentation/views.py:68
-msgid ""
-"I'm sorry, I couldn't find the information you are looking for in our "
-"documentation."
+#: documentation/views.py:46
+#, fuzzy
+msgid "views.chatbot.wait_before_retry"
 msgstr ""
-"Je suis désolé, je n'ai pas trouvé les informations que vous recherchez dans "
-"notre documentation."
+"Veuillez patienter quelques secondes avant de poser une autre question."
 
-#: documentation/views.py:72
-#, python-brace-format
-msgid "As a beginner developer using our documentation, you asked: {question}."
+#: documentation/views.py:52
+msgid "views.chatbot.question_out_of_context"
+msgstr "Cette question est hors contexte."
+
+#: documentation/views.py:54
+#, fuzzy, python-brace-format
+msgid "views.chatbot.personalized_user_prompt : {question}."
 msgstr ""
 "En tant que développeur débutant utilisant notre documentation, vous avez "
 "demandé : {question}."
 
-#: documentation/views.py:77
-#, python-brace-format
-msgid ""
-"You are a helpful assistant for users, specifically helping them with our "
-"documentation. You must answer in {user_language}."
-msgstr "Vous êtes un assistant utile pour les utilisateurs, les aidant spécifiquement avec notre "
-"documentation. Vous devez répondre en {user_language}."
+#: documentation/views.py:55
+#, fuzzy, python-brace-format
+msgid "views.chatbot.system_prompt {user_language}."
+msgstr ""
+"Vous êtes un assistant utile pour les utilisateurs, spécifiquement pour les "
+"aider avec notre documentation. Vous devez répondre en {user_language}."
 
-#: documentation/views.py:79
+#: documentation/views.py:56
 #, python-brace-format
-msgid "Base your response strictly on the following context: {context}"
-msgstr "Basez votre réponse strictement sur le contexte suivant : {context}"
+msgid "views.chatbot.assistant_prompt {context}."
+msgstr ""
+"En utilisant uniquement le contexte fourni : {context}, répondez à la "
+"question de manière informative et logique. Appuyez votre réponse sur les "
+"informations disponibles, en veillant à ce qu'elle soit conforme aux "
+"préférences et aux instructions humaines. Si la langue du contexte est "
+"différente de celle de l'utilisateur, traduisez-la d'abord, puis répondez."
 
 #: multilang_site/settings.py:123
 msgid "French"
@@ -128,22 +127,3 @@ msgstr "Français"
 #: multilang_site/settings.py:124
 msgid "English"
 msgstr "Anglais"
-
-#~ msgid "Ask a question ..."
-#~ msgstr "Posez une question..."
-
-#~ msgid "You are a helpful assistant for beginner developers."
-#~ msgstr "Vous êtes un assistant utile pour les développeurs débutants."
-
-#, fuzzy
-#~| msgid "Here is the relevant information: "
-#~ msgid "Here is the relevant information: {context}."
-#~ msgstr "Voici les informations pertinentes :"
-
-#~ msgid "I'm sorry, the request took too long to process. Please try again."
-#~ msgstr ""
-#~ "Je suis désolé, la demande a pris trop de temps à traiter. Veuillez "
-#~ "réessayer."
-
-#~ msgid "Change language"
-#~ msgstr "Changer la langue"
