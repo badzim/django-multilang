@@ -1,0 +1,29 @@
+[1mdiff --git a/documentation/templates/includes/navbar.html b/documentation/templates/includes/navbar.html[m
+[1mindex c646113..860f924 100644[m
+[1m--- a/documentation/templates/includes/navbar.html[m
+[1m+++ b/documentation/templates/includes/navbar.html[m
+[36m@@ -1,4 +1,5 @@[m
+ {% load i18n %}[m
+[32m+[m[32m{% block footer %}[m
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">[m
+     <a class="navbar-brand" href="/">{% translate 'templates.includes.documentation_app' %}</a>[m
+     <div class="navbar-collapse" id="navbarNav">[m
+[36m@@ -6,9 +7,6 @@[m
+             <li class="nav-item">[m
+                 <a class="nav-link" href="{% url 'document_list' %}">{% translate 'templates.includes.documents' %}</a>[m
+             </li>[m
+[31m-            <li class="nav-item">[m
+[31m-                <a class="nav-link" href="{% url 'chat_interface' %}">{% translate 'templates.includes.chatbot' %}</a>[m
+[31m-            </li>[m
+             <li class="nav-item">[m
+                 <form action="{% url 'set_language' %}" method="post" class="form-inline my-2 my-lg-0">[m
+                     {% csrf_token %}[m
+[36m@@ -26,4 +24,5 @@[m
+             </li>[m
+         </ul>[m
+     </div>[m
+[31m-</nav>[m
+\ No newline at end of file[m
+[32m+[m[32m</nav>[m
+[32m+[m[32m{% endblock %}[m
+\ No newline at end of file[m

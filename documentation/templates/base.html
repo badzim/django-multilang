@@ -8,40 +8,37 @@
     <title>{% block title %}{% endblock %}</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/pygments.css' %}">
-    <style>
-        /* Assure que le body et html prennent toute la hauteur */
-        html, body {
-            height: 100%;
-        }
-        /* Utilisation de flexbox pour organiser le contenu */
-        body {
-            display: flex;
-            flex-direction: column;
-        }
-        /* Le contenu principal occupe au moins 80% de la hauteur */
-        .content {
-            flex: 1 0 auto;
-            min-height: 80vh;
-        }
-        /* Le footer reste en bas de la page */
-        .footer {
-            flex-shrink: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/chatbot.css' %}">
 </head>
 <body>
+    {% block navbar %}
     {% include "includes/navbar.html" %}
+    {% endblock %}
     <div class="container mt-4">
         {% block content %}{% endblock %}
     </div>
-    
+    {% block mini_chatbot %}
+    {% include "includes/mini_chatbot.html" %}
+    {% endblock %}
+    {% block footer %}
     {% include "includes/footer.html" %}
+    <!-- FontAwesome for social icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    {% endblock %}
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.2.0/markdown-it.min.js"></script>
-    
+    <script>
+        var chatbotUrl = "{% url 'chatbot' %}";
+        var chatbotText = "{% translate 'templates.base.chatbot_title' %}";
+        // Translation for the "Clear" button
+        var clearText = "{% translate 'templates.base.clear' %}";
+    </script>
+    <script src="{% static 'js/chatbot.js' %}"></script>
+
 </body>
 </html>

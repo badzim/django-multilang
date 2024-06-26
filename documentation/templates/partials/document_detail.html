@@ -6,7 +6,4 @@
 <h1 class="my-4">{{ document.title }}</h1>
     {{ document.content | markdown }}
 <p><a href="{% url 'document_list' %}" class="btn btn-primary">{% translate "templates.partials.document.detail.back" %}</a></p>
-{% block mini_chatbot %}
-{% include "partials/mini_chatbot.html" %} 
-{% endblock %}
 {% endblock %}

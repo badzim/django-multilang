@@ -24,10 +24,6 @@ def document_detail(request, pk):
     return render(request, 'partials/document_detail.html', {'document': document})
 
 
-def chat_interface(request):
-    return render(request, 'chat.html')
-
-
 @csrf_exempt
 def chatbot(request):
     # S'assurer que la méthode de la requête est POST

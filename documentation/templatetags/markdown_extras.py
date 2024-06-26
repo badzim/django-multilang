@@ -12,8 +12,5 @@ def markdown_filter(value):
         'fenced_code'  # Enables recognition of fenced code blocks
     ]
     # Debugging prints to understand what is received
-    print("Original Value:", value)
     value = value.strip()
-    after = mark_safe(md.markdown(value, extensions=extensions))
-    print(after)
-    return after
+    return mark_safe(md.markdown(value, extensions=extensions))
