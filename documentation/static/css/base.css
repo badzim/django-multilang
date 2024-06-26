@@ -1,0 +1,18 @@
+/* Assure que le body et html prennent toute la hauteur */
+html, body {
+    height: 100%;
+}
+/* Utilisation de flexbox pour organiser le contenu */
+body {
+    display: flex;
+    flex-direction: column;
+}
+/* Le contenu principal occupe au moins 80% de la hauteur */
+.content {
+    flex: 1 0 auto;
+    min-height: 80vh;
+}
+/* Le footer reste en bas de la page */
+.footer {
+    flex-shrink: 0;
+}

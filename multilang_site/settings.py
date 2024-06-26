@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-c-h26-082u^d7(#zr8d(js$@jp16os@!(=z3!my1__-bc6az3=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["django-multilang.ikeoservices.tech", "localhost" ]
+ALLOWED_HOSTS = ["django-multilang.ikeoservices.tech", "localhost", "127.0.0.1"]
 
 # Assurez-vous que votre domaine est dans cette liste
 CSRF_TRUSTED_ORIGINS = [
@@ -142,9 +142,23 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'documentation/static')
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+GPT_SETUP = {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "n": 1,
+    "stop": None,
+    "temperature": 0.7
+}
+
+CHAT_INTERVAL_SECONDS = 5

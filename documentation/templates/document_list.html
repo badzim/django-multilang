@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% block title %}{% translate "Document List" %}{% endblock %}
+{% block title %}{% translate "template.document_list_title" %}{% endblock %}
 {% block content %}
-<h1 class="my-4">{% translate "Document List" %}</h1>
+<h1 class="my-4">{% translate "template.document_list_title" %}</h1>
 <ul class="list-group">
     {% for document in documents %}
         <li class="list-group-item">

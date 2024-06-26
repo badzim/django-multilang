@@ -1,16 +1,15 @@
 services:
   web:
     build:
-      context: ..
+      context: .
       dockerfile: Dockerfile
     env_file:
         .env
     command: >
-      sh -c "python manage.py makemigrations &&
-             python manage.py migrate &&
+      sh -c "python manage.py migrate &&
              python manage.py loaddata documentation/fixtures/initial_data.json
-             python manage.py runserver 0.0.0.0:8000 "
+             python manage.py runserver 0.0.0.0:8000"
     volumes:
-      - ..:/app
+      - .:/app
     ports:
-      - "8000:8000"
+      - "8005:8000"

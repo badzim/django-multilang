@@ -1,0 +1,21 @@
+<!-- Chatbot -->
+{% load i18n %}
+{% load static %}
+<div id="chatbot-container">
+    <div id="chat-container" class="card" style="display: none;">
+        <div id="chat-log" class="card-body"></div>
+        <form id="chat-form" class="card-footer">
+            <input type="text" id="chat-input" class="form-control"
+                   placeholder="{% translate 'templates.base.chatbot_input_placeholder' %}" required>
+            <div class="button-group">
+                <button type="submit" id="send-button" class="btn btn-primary">
+                    {% translate 'templates.base.chatbot_send_button' %}
+                </button>
+                <button type="button" id="clear-button" class="btn btn-danger">
+                    {% translate 'templates.base.clear' %}
+                </button>
+            </div>
+        </form>
+    </div>
+    <button id="chatbot-toggle" class="btn btn-primary">Chat</button>
+</div>

@@ -12,11 +12,11 @@ Ce projet est une application Django qui intègre un chatbot utilisant OpenAI po
 
 ## Utilisation avec Docker Compose
 
-Vous pouvez également utiliser Docker Compose pour exécuter le projet. Assurez-vous que Docker et Docker Compose sont installés sur votre machine.
+Assurez-vous que Docker et Docker Compose sont installés sur votre machine.
 
 ### 1. Configurer les clés API
 
-Créez un fichier `.env` à 'la racine du projet'/docker/  et ajoutez votre clé API OpenAI :
+Créez un fichier `.env` à 'la racine du projet' et ajoutez votre clé API OpenAI :
 
 ```sh
 OPENAI_API_KEY=<votre-cle-api-openai>
@@ -25,10 +25,10 @@ OPENAI_API_KEY=<votre-cle-api-openai>
 ### 2. Exécuter Docker Compose
 
 ```sh
-docker-compose -f docker/docker-compose.yml up --build
+docker-compose up --build
 ```
 
-Cela construira et démarrera les conteneurs définis dans `docker/docker-compose.yml`.
+Cela construira et démarrera les conteneurs définis dans `/docker-compose.yml`.
 
 ### 3. Tester l'application
 Utilisez votre navigateur préféré et naviguez vers http://localhost:8000.
@@ -58,5 +58,6 @@ export OPENAI_API_KEY=<votre-cle-api-openai>
 ```sh
 python manage.py makemigrations
 python manage.py migrate
+python django-admin compilemessages
 python manage.py runserver
 ```

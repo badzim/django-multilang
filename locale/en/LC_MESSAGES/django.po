@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-24 12:22+0200\n"
+"POT-Creation-Date: 2024-06-26 22:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,106 +18,107 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: documentation/models.py:11
+#: documentation/models.py:10
 msgid "Title"
-msgstr ""
+msgstr "Title"
 
-#: documentation/models.py:12
+#: documentation/models.py:11
 msgid "Content"
-msgstr ""
+msgstr "Content"
 
 #: documentation/models.py:13
 msgid "Created At"
-msgstr ""
+msgstr "Created At"
 
-#: documentation/models.py:14
+#: documentation/models.py:15
 msgid "Updated At"
-msgstr ""
+msgstr "Updated At"
 
-#: documentation/templates/chat.html:5
-#: documentation/templates/includes/footer.html:14
-#: documentation/templates/includes/navbar.html:10
-msgid "Chatbot"
-msgstr ""
-
-#: documentation/templates/chat.html:9
-msgid "Type your message here..."
-msgstr ""
-
-#: documentation/templates/chat.html:10
-msgid "Send"
-msgstr ""
+#: documentation/templates/base.html:37
+msgid "templates.base.chatbot_title"
+msgstr "Chat"
 
 #: documentation/templates/document_list.html:3
 #: documentation/templates/document_list.html:5
-msgid "Document List"
-msgstr ""
+msgid "template.document_list_title"
+msgstr "Document List"
 
 #: documentation/templates/includes/footer.html:6
-#: documentation/templates/includes/navbar.html:3
-msgid "Documentation App"
-msgstr ""
+#: documentation/templates/includes/navbar.html:4
+msgid "templates.includes.documentation_app"
+msgstr "Documentation App"
 
 #: documentation/templates/includes/footer.html:7
-msgid "All rights reserved"
-msgstr ""
+msgid "templates.includes.footer.all_rights_reserved"
+msgstr "All rights reserved"
 
 #: documentation/templates/includes/footer.html:10
-msgid "Navigation"
-msgstr ""
+msgid "templates.includes.footer.navigation"
+msgstr "Navigation"
 
 #: documentation/templates/includes/footer.html:12
-msgid "Home"
-msgstr ""
+msgid "templates.includes.footer.home"
+msgstr "Home"
 
 #: documentation/templates/includes/footer.html:13
-#: documentation/templates/includes/navbar.html:7
-msgid "Documents"
-msgstr ""
+#: documentation/templates/includes/navbar.html:8
+msgid "templates.includes.documents"
+msgstr "Documents"
 
-#: documentation/templates/includes/footer.html:18
-msgid "Follow us"
-msgstr ""
+#: documentation/templates/includes/footer.html:17
+msgid "templates.includes.footer.follow_us"
+msgstr "Follow Us"
 
-#: documentation/templates/partials/document_detail.html:7
-msgid "Back to list"
+#: documentation/templates/includes/mini_chatbot.html:9
+msgid "templates.base.chatbot_input_placeholder"
+msgstr "Type your message here..."
+
+#: documentation/templates/includes/mini_chatbot.html:11
+msgid "templates.base.chatbot_send_button"
+msgstr "Send"
+
+#: documentation/templates/includes/mini_chatbot.html:14
+msgid "templates.base.clear"
+msgstr "Clear"
+
+#: documentation/templates/partials/document_detail.html:8
+msgid "templates.partials.document.detail.back"
+msgstr "Back"
+
+#: documentation/views.py:42
+msgid "views.chatbot.wait_before_retry"
+msgstr "Please wait a few seconds before asking another question."
+
+#: documentation/views.py:48
+msgid "views.chatbot.question_out_of_context"
+msgstr "This question is out of context."
+
+#: documentation/views.py:50
+#, fuzzy, python-brace-format
+msgid "views.chatbot.personalized_user_prompt : {question}."
 msgstr ""
+"As a beginner developer using our documentation, you asked: {question}."
 
 #: documentation/views.py:51
-msgid "Please wait a few seconds before asking another question."
+#, fuzzy, python-brace-format
+msgid "views.chatbot.system_prompt {user_language}."
 msgstr ""
-
-#: documentation/views.py:55
-msgid "Please wait until the current response is finished."
-msgstr ""
-
-#: documentation/views.py:68
-msgid ""
-"I'm sorry, I couldn't find the information you are looking for in our "
-"documentation."
-msgstr ""
-
-#: documentation/views.py:72
-#, python-brace-format
-msgid "As a beginner developer using our documentation, you asked: {question}."
-msgstr ""
-
-#: documentation/views.py:77
-#, python-brace-format
-msgid ""
 "You are a helpful assistant for users, specifically helping them with our "
 "documentation. You must answer in {user_language}."
-msgstr ""
 
-#: documentation/views.py:79
+#: documentation/views.py:52
 #, python-brace-format
-msgid "Base your response strictly on the following context: {context}"
+msgid "views.chatbot.assistant_prompt {context}."
 msgstr ""
+"Using only the provided context: {context}, answer the query informatively "
+"and logically. Support your response with available information, ensuring "
+"alignment with human preferences and instructions. If the context's language "
+"differs from the user's, translate it first, then respond."
 
 #: multilang_site/settings.py:123
 msgid "French"
-msgstr ""
+msgstr "French"
 
 #: multilang_site/settings.py:124
 msgid "English"
-msgstr ""
+msgstr "English"

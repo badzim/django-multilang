@@ -2,20 +2,19 @@
 <footer class="footer mt-auto py-3 bg-light">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <h5> {% translate 'Documentation App' as app %} </h5>
-                <p>© 2024 {{app}}. {% translate 'All rights reserved' %}.</p>
+            <div class="col-md-4 mb-3">
+                <h5>{% translate 'templates.includes.documentation_app' %}</h5>
+                <p>© 2024 {{ app }}. {% translate 'templates.includes.footer.all_rights_reserved' %}.</p>
             </div>
-            <div class="col-md-4">
-                <h5>{% translate 'Navigation' %}</h5>
+            <div class="col-md-4 mb-3">
+                <h5>{% translate 'templates.includes.footer.navigation' %}</h5>
                 <ul class="list-unstyled">
-                    <li><a href="/">{% translate 'Home' %}</a></li>
-                    <li><a href="{% url 'document_list' %}">{% translate 'Documents' %}</a></li>
-                    <li><a href="{% url 'chat_interface' %}">{% translate 'Chatbot' %}</a></li>
+                    <li><a href="/">{% translate 'templates.includes.footer.home' %}</a></li>
+                    <li><a href="{% url 'document_list' %}">{% translate 'templates.includes.documents' %}</a></li>
                 </ul>
             </div>
-            <div class="col-md-4">
-                <h5>{% translate 'Follow us' %}</h5>
+            <div class="col-md-4 mb-3">
+                <h5>{% translate 'templates.includes.footer.follow_us' %}</h5>
                 <ul class="list-unstyled">
                     <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
                 </ul>
@@ -23,5 +22,3 @@
         </div>
     </div>
 </footer>
-<!-- FontAwesome for social icons -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
