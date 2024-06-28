@@ -1,5 +1,6 @@
 import json
 import time
+import logging
 
 from django.conf import settings
 from django.http import JsonResponse
@@ -12,6 +13,8 @@ from .langchain_utils import get_relevant_context
 from .models import Document
 
 client = OpenAI(api_key=settings.OPENAI_API_KEY)
+
+logger = logging.getLogger('documentation')
 
 
 def document_list(request):
@@ -33,6 +36,8 @@ def chatbot(request):
     question = data.get('question')
     user_language = request.LANGUAGE_CODE
     activate(user_language)  # Activer la langue préférée de l'utilisateur
+    # Log de la question de l'utilisateur
+    logger.debug(f"User: {request.user}, Question: {question}")
     # Vérifier l'intervalle de temps entre les questions
     last_question_time_key = 'last_question_time'
     last_question_time = request.session.get(last_question_time_key, 0)
@@ -50,6 +55,9 @@ def chatbot(request):
     personalized_prompt = _(f"views.chatbot.personalized_user_prompt : {question}.")
     system_prompt = _(f"views.chatbot.system_prompt {user_language}.")
     assistant_prompt = _(f"views.chatbot.assistant_prompt {context}.")
+    logger.debug(f"System Prompt: {system_prompt}")
+    logger.debug(f"User Prompt: {personalized_prompt}")
+    logger.debug(f"Assistant Prompt: {assistant_prompt}")
     # Appel à l'API OpenAI avec l'invite personnalisée
     response = client.chat.completions.create(
         messages=[
@@ -60,4 +68,5 @@ def chatbot(request):
         **settings.GPT_SETUP,
     )
     answer = response.choices[0].message.content.strip()
+    logger.debug(f"OpenAI Response: {answer}")
     return JsonResponse({'answer': answer})
