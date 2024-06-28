@@ -107,7 +107,7 @@ msgstr ""
 msgid "views.chatbot.system_prompt {user_language}."
 msgstr ""
 "Vous êtes un assistant utile pour les utilisateurs, spécifiquement pour les "
-"aider avec notre documentation. Vous devez répondre en {user_language}."
+"aider avec notre documentation. Vous devez répondre en Français impérativement !"
 
 #: documentation/views.py:52
 #, python-brace-format

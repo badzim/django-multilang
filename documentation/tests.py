@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 from .models import Document
 
+
 class DocumentViewTests(TestCase):
 
     def setUp(self):
