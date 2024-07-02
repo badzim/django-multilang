@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-26 22:45+0200\n"
+"POT-Creation-Date: 2024-07-02 23:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: documentation/chatbot_utils.py:14
+msgid "views.chatbot.wait_before_retry"
+msgstr "Please wait a few seconds before asking another question."
+
+#: documentation/chatbot_utils.py:20
+#, python-brace-format
+msgid "views.chatbot.personalized_user_prompt : {question}."
+msgstr ""
+"As a beginner developer using our documentation, you asked: {question}."
+
+#: documentation/chatbot_utils.py:21
+#, python-brace-format
+msgid "views.chatbot.system_prompt {user_language}."
+msgstr ""
+"You are a helpful assistant for users, specifically helping them with our "
+"documentation. You must answer in {user_language}."
+
+#: documentation/chatbot_utils.py:22
+#, python-brace-format
+msgid "views.chatbot.assistant_prompt {context}."
+msgstr ""
+"Using only the provided context: {context}, answer the query informatively "
+"and logically. Support your response with available information, ensuring "
+"alignment with human preferences and instructions. If the context's language "
+"differs from the user's, translate it first, then respond."
 
 #: documentation/models.py:10
 msgid "Title"
@@ -37,6 +63,11 @@ msgstr "Updated At"
 #: documentation/templates/base.html:37
 msgid "templates.base.chatbot_title"
 msgstr "Chat"
+
+#: documentation/templates/base.html:39
+#: documentation/templates/includes/mini_chatbot.html:15
+msgid "templates.base.clear"
+msgstr "Clear"
 
 #: documentation/templates/document_list.html:3
 #: documentation/templates/document_list.html:5
@@ -73,52 +104,22 @@ msgstr "Follow Us"
 msgid "templates.base.chatbot_input_placeholder"
 msgstr "Type your message here..."
 
-#: documentation/templates/includes/mini_chatbot.html:11
+#: documentation/templates/includes/mini_chatbot.html:12
 msgid "templates.base.chatbot_send_button"
 msgstr "Send"
-
-#: documentation/templates/includes/mini_chatbot.html:14
-msgid "templates.base.clear"
-msgstr "Clear"
 
 #: documentation/templates/partials/document_detail.html:8
 msgid "templates.partials.document.detail.back"
 msgstr "Back"
 
-#: documentation/views.py:42
-msgid "views.chatbot.wait_before_retry"
-msgstr "Please wait a few seconds before asking another question."
-
-#: documentation/views.py:48
+#: documentation/views.py:37
 msgid "views.chatbot.question_out_of_context"
 msgstr "This question is out of context."
 
-#: documentation/views.py:50
-#, fuzzy, python-brace-format
-msgid "views.chatbot.personalized_user_prompt : {question}."
-msgstr ""
-"As a beginner developer using our documentation, you asked: {question}."
-
-#: documentation/views.py:51
-#, fuzzy, python-brace-format
-msgid "views.chatbot.system_prompt {user_language}."
-msgstr ""
-"You are a helpful assistant for users, specifically helping them with our "
-"documentation. You must answer in {user_language}."
-
-#: documentation/views.py:52
-#, python-brace-format
-msgid "views.chatbot.assistant_prompt {context}."
-msgstr ""
-"Using only the provided context: {context}, answer the query informatively "
-"and logically. Support your response with available information, ensuring "
-"alignment with human preferences and instructions. If the context's language "
-"differs from the user's, translate it first, then respond."
-
-#: multilang_site/settings.py:123
+#: multilang_site/settings.py:124
 msgid "French"
 msgstr "French"
 
-#: multilang_site/settings.py:124
+#: multilang_site/settings.py:125
 msgid "English"
 msgstr "English"

@@ -1,0 +1,96 @@
+@startgantt
+<style>
+ganttDiagram {
+  task {
+    BackGroundColor lightgreen
+    LineColor black 
+    unstarted {
+      BackGroundColor Fuchsia 
+      LineColor FireBrick
+    }
+  }
+}
+</style>
+
+language fr
+Project starts 2024-05-21
+sunday are close
+saturday are close
+
+2024-06-10 to 2024-06-11 are named [Interuption pédagogique]
+2024-06-10 to 2024-06-11 are colored in salmon
+2024-06-10 to 2024-06-11 are closed
+
+2024-07-08 to 2024-07-08 are named [Soutenance]
+2024-07-08 to 2024-07-08 are colored in salmon
+2024-07-08 to 2024-07-08 are closed
+
+-- Documentation Académique et Préparation en Parallèle --
+[Rédaction du rapport de stage] lasts 23 days and starts 2024-05-27
+[Préparation de la soutenance] lasts 5 days and starts at [Rédaction du rapport de stage]'s end
+-- Interactions Client et Étude de Faisabilité --
+[Réunion avec le mainteneur] lasts 1 days and starts 2024-05-31 
+[Réunion avec le mainteneur et un client] lasts 1 days and starts 2024-06-10 
+[Réunion avec EdB Astreinte] lasts 1 days and starts 2024-06-17 
+[Réunion avec Centre de support] lasts 1 days and starts 2024-06-19 
+[Réunion avec eExp et Infra] lasts 1 days and starts 2024-06-27 
+[Réunion avec eExp Pour création de carte modèle] lasts 1 days and starts 2024-07-05 
+
+-- Intégration et Préparation Technique --
+[Familiarisation avec l'environnement] lasts 4 days and starts 2024-05-21 
+[Installation des environnements de test] lasts 3 days and starts at [Familiarisation avec l'environnement]'s end
+[Expérimentation de NagVis et compréhension des fichiers de configuration] lasts 2 days and starts at [Installation des environnements de test]'s end
+
+-- Planification et Collaboration --
+[Réalisation des diagrammes de séquence + validation par le mainteneur] lasts 5 days and starts at [Expérimentation de NagVis et compréhension des fichiers de configuration]'s end
+[Échanges avec le mainteneur] lasts 5 days and starts at [Expérimentation de NagVis et compréhension des fichiers de configuration]'s end
+[Étude de l'existant + proposition de solution] lasts 3 days and starts at [Échanges avec le mainteneur]'s end
+[Validation de la proposition] lasts 2 days and starts at [Étude de l'existant + proposition de solution]'s end
+[Rencontre avec les utilisateurs des cartes pour comprendre leurs besoins] lasts 5 days and starts at [Échanges avec le mainteneur]'s end
+
+-- Standardisation, Développement et Intégration --
+[Standardisation des cartes PA2 et introduction des templates] lasts 1 day and starts at [Rencontre avec les utilisateurs des cartes pour comprendre leurs besoins]'s end
+[Scripts Python basés sur les templates pour créer d'autres cartes] lasts 1 day and starts at [Standardisation des cartes PA2 et introduction des templates]'s end
+[Standardisation de l'interaction avec un batch] lasts 1 day and starts at [Scripts Python basés sur les templates pour créer d'autres cartes]'s end
+[Présentation de la solution provisoire + validation] lasts 1 day and starts at [Standardisation de l'interaction avec un batch]'s end
+[Archivage des anciennes cartes, copie des nouvelles + logging] lasts 1 day and starts at [Présentation de la solution provisoire + validation]'s end
+[Gestion des droits sur les cartes] lasts 3 days and starts at [Archivage des anciennes cartes, copie des nouvelles + logging]'s end
+[Exploitation de l'API Centreon] lasts 5 days and starts at [Gestion des droits sur les cartes]'s end
+note bottom
+  - Intégration de l'API Centreon avec NagVis
+  - Tests de synchronisation entre les deux systèmes
+end note
+
+-- Complémentaire --
+[Automatisation des autres cartes] lasts 5 days and starts at [Exploitation de l'API Centreon]'s end
+
+
+
+
+[Rédaction du rapport de stage]  is 100% completed
+[Préparation de la soutenance] is 0% completed
+
+[Familiarisation avec l'environnement] is 100% completed
+[Installation des environnements de test]  is 100% completed
+[Expérimentation de NagVis et compréhension des fichiers de configuration]  is 100% completed
+
+
+[Réalisation des diagrammes de séquence + validation par le mainteneur]  is 80% completed
+[Échanges avec le mainteneur]  is 100% completed
+[Étude de l'existant + proposition de solution]  is 90% completed
+[Validation de la proposition]  is 100% completed
+[Rencontre avec les utilisateurs des cartes pour comprendre leurs besoins]  is 100% completed
+
+
+[Standardisation des cartes PA2 et introduction des templates]  is 100% completed
+[Scripts Python basés sur les templates pour créer d'autres cartes]  is 90% completed
+[Standardisation de l'interaction avec un batch]  is 100% completed
+[Présentation de la solution provisoire + validation]  is 100% completed
+[Archivage des anciennes cartes, copie des nouvelles + logging]  is 100% completed
+
+[Gestion des droits sur les cartes]  is 60% completed
+[Automatisation des autres cartes]  is 0% completed
+[Exploitation de l'API Centreon]  is 0% completed
+
+
+@endgantt

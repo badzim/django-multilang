@@ -10,20 +10,14 @@ COPY . /app
 # Installer les dépendances nécessaires pour compiler les packages
 RUN apt-get update && apt-get install -y \
     build-essential \
-    gcc \
-    g++ \
-    libsqlite3-dev \
-    gettext
-
-# Installer les dépendances
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+    libsqlite3-dev
 
 # Install gettext for message compilation
 RUN apt-get update && apt-get install -y gettext
 
-# Collecter les fichiers statiques
-RUN python manage.py collectstatic --noinput
+# Installer les dépendances
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
 
 # Compile the translations
 RUN python manage.py compilemessages

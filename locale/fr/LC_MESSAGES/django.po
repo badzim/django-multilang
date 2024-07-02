@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-26 22:45+0200\n"
+"POT-Creation-Date: 2024-07-02 23:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,36 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: documentation/chatbot_utils.py:14
+#, fuzzy
+msgid "views.chatbot.wait_before_retry"
+msgstr ""
+"Veuillez patienter quelques secondes avant de poser une autre question."
+
+#: documentation/chatbot_utils.py:20
+#, fuzzy, python-brace-format
+msgid "views.chatbot.personalized_user_prompt : {question}."
+msgstr ""
+"En tant que développeur débutant utilisant notre documentation, vous avez "
+"demandé : {question}."
+
+#: documentation/chatbot_utils.py:21
+#, python-brace-format
+msgid "views.chatbot.system_prompt {user_language}."
+msgstr ""
+"Vous êtes un assistant utile pour les utilisateurs, spécifiquement pour les "
+"aider avec notre documentation. Vous devez répondre en {user_language}."
+
+#: documentation/chatbot_utils.py:22
+#, python-brace-format
+msgid "views.chatbot.assistant_prompt {context}."
+msgstr ""
+"En utilisant uniquement le contexte fourni : {context}, répondez à la "
+"question de manière informative et logique. Appuyez votre réponse sur les "
+"informations disponibles, en veillant à ce qu'elle soit conforme aux "
+"préférences et aux instructions humaines. Si la langue du contexte est "
+"différente de celle de l'utilisateur, traduisez-la d'abord, puis répondez."
 
 #: documentation/models.py:10
 msgid "Title"
@@ -37,6 +67,11 @@ msgstr "Mis à jour le"
 #: documentation/templates/base.html:37
 msgid "templates.base.chatbot_title"
 msgstr "Chat"
+
+#: documentation/templates/base.html:39
+#: documentation/templates/includes/mini_chatbot.html:15
+msgid "templates.base.clear"
+msgstr "Vider"
 
 #: documentation/templates/document_list.html:3
 #: documentation/templates/document_list.html:5
@@ -73,56 +108,22 @@ msgstr "Suivez-nous"
 msgid "templates.base.chatbot_input_placeholder"
 msgstr "Saisissez votre question ici..."
 
-#: documentation/templates/includes/mini_chatbot.html:11
+#: documentation/templates/includes/mini_chatbot.html:12
 msgid "templates.base.chatbot_send_button"
 msgstr "Envoyer"
-
-#: documentation/templates/includes/mini_chatbot.html:14
-msgid "templates.base.clear"
-msgstr "Vider"
 
 #: documentation/templates/partials/document_detail.html:8
 msgid "templates.partials.document.detail.back"
 msgstr "Retour"
 
-#: documentation/views.py:42
-#, fuzzy
-msgid "views.chatbot.wait_before_retry"
-msgstr ""
-"Veuillez patienter quelques secondes avant de poser une autre question."
-
-#: documentation/views.py:48
+#: documentation/views.py:37
 msgid "views.chatbot.question_out_of_context"
 msgstr "Cette question est hors contexte."
 
-#: documentation/views.py:50
-#, fuzzy, python-brace-format
-msgid "views.chatbot.personalized_user_prompt : {question}."
-msgstr ""
-"En tant que développeur débutant utilisant notre documentation, vous avez "
-"demandé : {question}."
-
-#: documentation/views.py:51
-#, fuzzy, python-brace-format
-msgid "views.chatbot.system_prompt {user_language}."
-msgstr ""
-"Vous êtes un assistant utile pour les utilisateurs, spécifiquement pour les "
-"aider avec notre documentation. Vous devez répondre en {user_language}."
-
-#: documentation/views.py:52
-#, python-brace-format
-msgid "views.chatbot.assistant_prompt {context}."
-msgstr ""
-"En utilisant uniquement le contexte fourni : {context}, répondez à la "
-"question de manière informative et logique. Appuyez votre réponse sur les "
-"informations disponibles, en veillant à ce qu'elle soit conforme aux "
-"préférences et aux instructions humaines. Si la langue du contexte est "
-"différente de celle de l'utilisateur, traduisez-la d'abord, puis répondez."
-
-#: multilang_site/settings.py:123
+#: multilang_site/settings.py:124
 msgid "French"
 msgstr "Français"
 
-#: multilang_site/settings.py:124
+#: multilang_site/settings.py:125
 msgid "English"
 msgstr "Anglais"

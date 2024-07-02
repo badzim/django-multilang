@@ -14,10 +14,8 @@
                     <select name="language" id="language-select" class="form-control mr-sm-2" onchange="this.form.submit()">
                         {% get_current_language as LANGUAGE_CODE %}
                         {% get_available_languages as LANGUAGES %}
-                        
                         <!-- Placeholder with current language -->
-                        <option value="" disabled selected>Language: {{ LANGUAGE_CODE }}</option>
-                        
+                        <option value="" disabled selected>Language: {{ LANGUAGE_CODE }}</option>  
                         {% for lang in LANGUAGES %}
                             {% if lang.0 != LANGUAGE_CODE %}
                                 <option value="{{ lang.0 }}" data-full-text="{{ lang.1 }}">
