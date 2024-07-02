@@ -6,6 +6,9 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import Document
 from .langchain_utils import get_relevant_context
 from .chatbot_utils import call_openai_api, check_time_interval
+import logging
+
+logger = logging.getLogger('documentation')
 
 
 def document_list(request):
@@ -27,6 +30,8 @@ def chatbot(request):
     question = data.get('question')
     user_language = request.LANGUAGE_CODE
     activate(user_language)  # Activer la langue préférée de l'utilisateur
+    # Log de la question de l'utilisateur
+    logger.debug(f"User: {request.user}, Question: {question}")
     # Vérifier l'intervalle de temps entre les questions
     interval_ok, message = check_time_interval(request)
     if not interval_ok:
